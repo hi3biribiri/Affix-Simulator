@@ -25,11 +25,12 @@
 *	*Note that the values use real affix data sampled from multiple accounts; hidden decimals may slightly affect the ranges
 * 
 *	The types of affixes are listed below:
-*	Weapon ATK			Type ATK	generic stats	per sec	added dmg	Resistence	Reductions	Additions
-*	Great Sword/Fist	BIO			ATK				SP/s	Ice			Ice			-SP%		CDMG%
-*	Heavy/Scythe		PSY			DEF				HP/s	Fire		Fire
-*	Blade/Cross			MECH		CRT						Lightining	Lightning
-*	Lance/Pistol		QUA			SP						Max Shield
+*	Weapon ATK		Type ATK	generic stats	per sec		added dmg	Resistence	Reductions	Additions
+*	Great Sword/Fist	BIO		ATK		SP/s		Ice		Ice		-SP%		CDMG%
+*	Heavy/Scythe		PSY		DEF		HP/s		Fire		Fire
+*	Blade/Cross		MECH		CRT				Lightining	Lightning
+*	Lance/Pistol		QUA		SP				Max Shield
+*	Archers/Chakram		IMG		HP
 * 
 *	Credits for above data: Clicky#3131, L e o#1173, SinsOfSeven#3164 (TencentDimepiece), Zeikire#9999
 *

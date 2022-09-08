@@ -326,12 +326,12 @@ void check_wafer() {
 *	Postcondition:	Checks and rerolls affix to guarantee no double SP rolls on the same 2x affix roll.
 */
 void sp_check(double affix1, double& affix2) {
-	double head1 = (int)(affix1 / 100);
-	double head2 = (int)(affix2 / 100);
-	if ((head1 == 4 || head1 == 5) && (head2 == 4 || head2 == 5)) {
-		while (head2 == 4 || head2 == 5) {
+	double head1 = (int) (affix1 / 100);
+	double head2 = (int) (affix2 / 100);
+    	if ((head1 == 4 || head1 == 5) && (head1 == head2)) {
+		while (head1 == head2) {
 			affix2 = get_affix();
-			head2 = (int)(affix2 / 100);
+			head2 = (int) (affix2 / 100);
 		}
 	}
 }

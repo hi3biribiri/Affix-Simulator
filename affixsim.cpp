@@ -25,12 +25,12 @@
 *	*Note that the values use real affix data sampled from multiple accounts; hidden decimals may slightly affect the ranges
 * 
 *	The types of affixes are listed below:
-*	Weapon ATK		Type ATK	generic stats	per sec		added dmg	Resistence	Reductions	Additions
-*	Great Sword/Fist	BIO		ATK		SP/s		Ice		Ice		-SP%		CDMG%
-*	Heavy/Scythe		PSY		DEF		HP/s		Fire		Fire
-*	Blade/Cross		MECH		CRT				Lightining	Lightning
-*	Lance/Pistol		QUA		SP				Max Shield
-*	Archers/Chakram		IMG		HP
+*	Weapon ATK			Type ATK	generic stats	per sec	added dmg	Resistence	Reductions	Additions
+*	Great Sword/Fist	BIO			ATK				SP/s	Ice			Ice			-SP%		CDMG%
+*	Heavy/Scythe		PSY			DEF				HP/s	Fire		Fire
+*	Blade/Cross			MECH		CRT						Lightining	Lightning
+*	Lance/Pistol		QUA			SP						Max Shield
+*	Archer/Chakram		IMG			HP
 * 
 *	Credits for above data: Clicky#3131, L e o#1173, SinsOfSeven#3164 (TencentDimepiece), Zeikire#9999
 *
@@ -116,7 +116,6 @@ void fill_data() {
 	affix_data[5][1][0] = 2.00;
 	affix_data[5][1][1] = 3.20;
 }
-
 /*
 *	Postcondition:	Prints the list of desirable affixes.
 */
@@ -125,7 +124,7 @@ void prompt_affix() {
 		cout << i << ":\t";
 		switch (AFFIX_OPEN[i]) {
 		case 0:
-			cout << "Attack\t\t\t\t (Gain X ATK / X-type characters gain Y ATK / X and Y Wielders gain Z ATK)" << endl;
+			cout << "Attack\t\t\t\t\t (Gain X ATK / X-type characters gain Y ATK / X and Y Wielders gain Z ATK)" << endl;
 			break;
 		case 1:
 			cout << "Critical Damage\t\t\t (Increase Crit DMG X%)" << endl;
@@ -139,14 +138,12 @@ void prompt_affix() {
 		}
 	}
 }
-
 /*
 *	Postcondition:	Returns whether the input is between or equal to the range defined.
 */
 bool valid_prompt(double prompt, double max, double min = 0) {
 	return prompt >= min && prompt <= max;
 }
-
 /*
 *	Postcondition:	Saves the user's selected prompt.
 */
@@ -163,7 +160,6 @@ void select_desired(int& prompt) {
 	}
 	prompt = AFFIX_OPEN[prompt];
 }
-
 /*
 *	Posctondition:	Determines whether the user wants to use Wafer Locks.
 */
@@ -221,7 +217,7 @@ double get_affix() {
 	//affix = std::ceil(affix * 100.0) / 100.0;
 	// Rounding by hundredths (0.01)
 	//affix = std::ceil(affix * 100.0) / 100.0;
-
+	
 	// Since the affix values are now "diluted," we add an encoding via the original typing to help us distinguish which affixes it came from to help us group.
 	return affix + type * 100;
 }
@@ -246,7 +242,7 @@ void add_stat(double arr[], double affix) {
 	}
 }
 /*
-*	Postcondition:	Determines wafer goals.
+*	Postcondition:	Determines wafer goals.	
 */
 void set_wafer() {
 	for (int i = 0; i < 4; i++) {
@@ -332,12 +328,12 @@ void check_wafer() {
 *	Postcondition:	Checks and rerolls affix to guarantee no double SP rolls on the same 2x affix roll.
 */
 void sp_check(double affix1, double& affix2) {
-	double head1 = (int) (affix1 / 100);
-	double head2 = (int) (affix2 / 100);
-    	if ((head1 == 4 || head1 == 5) && (head1 == head2)) {
+	double head1 = (int)(affix1 / 100);
+	double head2 = (int)(affix2 / 100);
+	if ((head1 == 4 || head1 == 5) && (head1 == head2)) {
 		while (head1 == head2) {
 			affix2 = get_affix();
-			head2 = (int) (affix2 / 100);
+			head2 = (int)(affix2 / 100);
 		}
 	}
 }

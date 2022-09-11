@@ -216,6 +216,12 @@ double get_affix() {
 	double f = (double)rand() / RAND_MAX;
 	double affix = affix_data[type][tier][0] + f * (affix_data[type][tier][1] - affix_data[type][tier][0]);
 
+	// Rounding function, remove the comments by deleting the "//" to comment it out to enable specific rounding values.
+	// Rounding by tenths (0.1):
+	//affix = std::ceil(affix * 100.0) / 100.0;
+	// Rounding by hundredths (0.01)
+	//affix = std::ceil(affix * 100.0) / 100.0;
+
 	// Since the affix values are now "diluted," we add an encoding via the original typing to help us distinguish which affixes it came from to help us group.
 	return affix + type * 100;
 }

@@ -211,7 +211,7 @@ void set_goals() {
 *	Postcondition:	Gets a random affix.
 */
 double get_affix() {
-	int type = rand() % 27;
+	int type = rand() % 26;
 	int tier = rand() % 2;
 	double f = (double)rand() / RAND_MAX;
 	double affix = affix_data[type][tier][0] + f * (affix_data[type][tier][1] - affix_data[type][tier][0]);
